@@ -73,7 +73,7 @@ public class T1 {
 			threads.submit(atomic);
 
 		}
-		Thread.sleep(10000);
+		Thread.sleep(10000);		
 	}
 
 	public void testSync() throws InterruptedException {
@@ -84,6 +84,13 @@ public class T1 {
 			threads.submit(sync);
 		}
 		Thread.sleep(10000);
+	}
+	
+	public void run(int contThreads,Runnable thread){
+		ExecutorService threads = Executors.newFixedThreadPool(contThreads);
+		for (int i = 0; i < contThreads; i++) {
+			threads.submit(thread);
+		}
 	}
 
 }
