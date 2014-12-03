@@ -1,6 +1,6 @@
 package me.azna.dataguru.jvm.week10;
 
-public class TClass extends SuperClass implements IInterface {
+public class TClass extends SuperClass implements IInterface,IInterface2 {
 	private boolean flag = false;
 	public static final String CONSTANTS = "constants";
 
@@ -19,6 +19,12 @@ public class TClass extends SuperClass implements IInterface {
 
 	static String getConstants() {
 		return CONSTANTS;
+	}
+
+	@Override
+	public void iiMethod() {
+		System.out.println("iiM");
+		
 	}
 
 }
