@@ -44,17 +44,30 @@ public class ClassParser {
 		return sb.toString();
 	}
 
+	/**
+	 * 读取指定字节
+	 * 
+	 * @param byteCount
+	 * @return
+	 * @throws IOException
+	 */
 	private byte[] readBytes(int byteCount) throws IOException {
 		ByteBuffer buffer = ByteBuffer.allocate(byteCount);
 		channel.read(buffer);
 		return buffer.array();
 	}
 
+	/**
+	 * 获得字节表示的数
+	 * 
+	 * @param bytes
+	 * @return
+	 */
 	private int bytes2Int(byte[] bytes) {
-		int mask = 0xff;		
+		int mask = 0xff;
 		int n = 0;
 		for (int i = 0; i < bytes.length; i++) {
-			n <<= 8;			
+			n <<= 8;
 			n |= bytes[i] & mask;
 		}
 		return n;
