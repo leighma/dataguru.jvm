@@ -4,6 +4,16 @@ public class ConstantPoolInfo {
 	private int count;
 	private Constant[] constants;
 
+	/**
+	 * 获得常量
+	 * 
+	 * @param i
+	 * @return
+	 */
+	public Constant getConstant(int i) {
+		return constants[i - 1];
+	}
+
 	public int getCount() {
 		return count;
 	}
